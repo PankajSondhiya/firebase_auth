@@ -1,14 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { FirebaseProvider } from "./firebase-config";
+import { ToastContainer } from "react-toastify";
+// import { firebaseProvider } from "./firebase-config";/
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <FirebaseProvider>
+    <ToastContainer position="top-right" autoClose="3000" />
     <App />
-  </React.StrictMode>
+  </FirebaseProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
